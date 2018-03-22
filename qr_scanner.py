@@ -2,8 +2,7 @@ from __future__ import print_function
 import pyzbar.pyzbar as pyzbar
 import numpy as np
 import cv2
-
-
+#@shar
 def decode(im):
     # Find barcodes and QR codes
     decodedObjects = pyzbar.decode(im)
