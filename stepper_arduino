@@ -1,0 +1,70 @@
+int Distance = 0;
+int a;
+int i;
+void setup()
+{
+ // Record the number of steps we've taken void setup() {
+
+pinMode(8, OUTPUT);
+pinMode(9, OUTPUT);
+digitalWrite(8, LOW);
+digitalWrite(9, LOW);
+Serial.begin(9600);
+Serial.print("shar");
+
+
+}
+void loop()
+
+
+{
+  
+  if(Serial.available() > 0)
+{
+ a = Serial.read();
+}
+
+if (a == 49)
+{
+  Serial.println(a);
+  for(Distance = 0 ; Distance < 140; Distance++)
+      {
+        digitalWrite(9, HIGH);
+        delay(0.01);
+        digitalWrite(9, LOW);
+        delay(0.01);
+        Serial.println(Distance);// record this step // Check to see if we are at the end of our move
+
+      }
+}
+
+
+ 
+  
+/*for(Distance = 0 ; Distance < 26; Distance++)
+digitalWrite(9, HIGH);
+delay(0.01);
+digitalWrite(9, LOW);
+delay(0.01);
+Serial.println(Distance);// record this step // Check to see if we are at the end of our move
+
+// two rotation for 1/8 bridge and 1 rotation for 1/6 bridge (for this code)
+
+if (Distance == 7000) { // We are! Reverse direction (invert DIR signal)
+
+if (digitalRead(8) == LOW) {
+
+digitalWrite(8, HIGH); }
+
+else {
+
+digitalWrite(8, LOW);
+
+} // Reset our distance back to zero since we're // starting a new move
+
+Distance = 0; // Now pause for half a second delay(500);
+
+}*/
+
+}
+
